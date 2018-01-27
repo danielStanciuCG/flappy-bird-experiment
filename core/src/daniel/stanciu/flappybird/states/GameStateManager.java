@@ -1,7 +1,6 @@
 package daniel.stanciu.flappybird.states;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.sun.xml.internal.ws.util.xml.XMLReaderComposite;
 
 import java.util.Stack;
 
@@ -19,12 +18,12 @@ public class GameStateManager {
 
     //Removes the state at the top of the stack
     public void pop() {
-        states.pop();
+        states.pop().dispose();
     }
 
     //Replaces the top state with another state
     public void set(State state) {
-        states.pop();
+        states.pop().dispose();
         states.push(state);
     }
 
